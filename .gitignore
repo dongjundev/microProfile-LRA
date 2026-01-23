@@ -1,0 +1,86 @@
+AGENTS.md
+CLAUDE.md
+
+
+########################################
+# Gradle
+########################################
+.gradle/
+build/
+**/build/
+
+# Gradle GUI / local settings (optional)
+gradle-app.setting
+!gradle-wrapper.jar
+
+########################################
+# Java
+########################################
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.hprof
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+########################################
+# Logs / Runtime outputs
+########################################
+*.log
+logs/
+**/logs/
+
+########################################
+# Spring local config (team policy)
+# - 로컬 전용 설정은 제외하고, 예시 파일을 커밋하는 패턴 권장
+########################################
+application-local.properties
+application-local.yml
+application-local.yaml
+*.local.properties
+*.local.yml
+*.local.yaml
+.env
+.env.*
+
+# (예시 파일은 추적하고 싶다면 아래처럼 예외를 둡니다)
+!application-local.example.yml
+!application-local.example.yaml
+!application-local.example.properties
+
+########################################
+# IntelliJ IDEA
+########################################
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+# IntelliJ Gradle settings caches (optional)
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+
+########################################
+# Eclipse / STS
+########################################
+.project
+.classpath
+.settings/
+.factorypath
+.springBeans
+bin/
+
+########################################
+# VS Code
+########################################
+.vscode/
+
+########################################
+# OS
+########################################
+.DS_Store
+Thumbs.db

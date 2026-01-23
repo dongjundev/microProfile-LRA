@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.2'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+description = 'LRA order initiator service'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repository.jboss.org/nexus/content/groups/public/' }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-jersey'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.glassfish.jersey.media:jersey-media-json-jackson'
+    implementation 'org.eclipse.microprofile.lra:microprofile-lra-api:2.0'
+    implementation 'org.jboss.narayana.rts:narayana-lra-jakarta:5.13.1.Final'
+    implementation 'org.glassfish.jersey.core:jersey-client'
+    implementation 'org.jboss.resteasy:resteasy-jackson2-provider:6.2.7.Final'
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.1'
+    runtimeOnly 'org.glassfish.jaxb:jaxb-runtime:4.0.4'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    runtimeOnly 'com.sun.xml.bind:jaxb-impl:2.3.6'
+
+    runtimeOnly 'com.h2database:h2'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

@@ -1,0 +1,28 @@
+server:
+  port: 8082
+
+spring:
+  jersey:
+    application-path: /
+  datasource:
+    url: jdbc:h2:mem:lra_payment;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+
+lra:
+  coordinator:
+    url: http://localhost:8080/lra-coordinator
+
+# Base URL for LRA callbacks (use host.docker.internal for Docker-based coordinator)
+app:
+  base-url: http://host.docker.internal:8082
