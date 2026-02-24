@@ -1,0 +1,2 @@
+rootProject.name = 'microProfile-LRA'
+include 'lra-order', 'lra-inventory', 'lra-payment'
